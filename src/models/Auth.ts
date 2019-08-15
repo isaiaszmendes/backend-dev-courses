@@ -1,14 +1,16 @@
 import { model, Schema, Document, HookNextFunction } from 'mongoose'
 import bcrypt from 'bcrypt'
+import { Json } from 'sequelize/types/lib/utils';
 
-interface IUser extends Document {
+interface IAuth extends Document {
+   id: string
    name: string
    email: string
-   password?: string
+   password: string 
    ola(): string 
 }
 
-const UserAuth = new Schema({
+const AuthSchema = new Schema({
    name: {
       type: String,
       required: [true, 'Why no name?']
@@ -26,16 +28,18 @@ const UserAuth = new Schema({
    }
 }, {
    timestamps: true
-}).pre('save', async function(this: IUser, next: HookNextFunction){
+}).pre('save', async function(this: IAuth, next: HookNextFunction){
    const hash = await bcrypt.hash(this.password, 10)
    this.password = hash
    next()
 })
 
-UserAuth.methods.ola = function(this): string{
+AuthSchema.methods.ola = function(this): string{
    return `Olá, ${this.name}!`
 }
 
-export default model<IUser>('UserAuth', UserAuth)
+
+
+export default model<IAuth>('Auth', AuthSchema)
 
 
