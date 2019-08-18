@@ -27,9 +27,9 @@ Course.init({
   tableName: 'courses',
 })
 
-Course.sync()
-   .then()
-   .catch((err: string) => console.log('asdasdasdasdasd', err))
+// Course.sync()
+//    .then()
+//    .catch((err: string) => console.log('asdasdasdasdasd', err))
 
 
 export default Course

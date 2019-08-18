@@ -24,9 +24,9 @@ Address.init({
   tableName: 'address',
 })
 
-Address.sync()
-   .then()
-   .catch((err: string) => console.log('BTW, did you enter wrong database credentials?', err))
+// Address.sync()
+//    .then()
+//    .catch((err: string) => console.log('BTW, did you enter wrong database credentials?', err))
 
 
 export default Address

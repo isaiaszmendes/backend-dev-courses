@@ -36,8 +36,8 @@ User.init({
 
 User.hasMany(Address);
 
-User.sync()
-  .then()
-  .catch((err: string) => console.log('BTW, did you enter wrong database credentials?', err))
+// User.sync()
+//   .then()
+//   .catch((err: string) => console.log('BTW, did you enter wrong database credentials?', err))
 
 export default User

@@ -14,9 +14,9 @@ const config: Iconfig = {
 const classSequelize: any = Sequelize
 const sequelize = new classSequelize(config)
 
-sequelize
-  .authenticate()
-  .then()
-  .catch((err: string) => console.error('Unable to connect to the database:', err));
+// sequelize
+//   .authenticate()
+//   .then()
+//   .catch((err: string) => console.error('Unable to connect to the database:', err));
 
 export default sequelize
