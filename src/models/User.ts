@@ -24,18 +24,17 @@ User.init({
   password: {
     type: DataTypes.STRING(15),
   },
-  age: {
-    type: DataTypes.INTEGER.UNSIGNED
+  birthdate: {
+    type: DataTypes.DATE,
   }
 }, {
   sequelize,
   modelName: 'User',
+  tableName: 'users',
   timestamps: true
 })
 
 User.hasMany(Address);
-
-
 
 User.sync()
   .then()

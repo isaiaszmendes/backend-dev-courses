@@ -20,7 +20,8 @@ Address.init({
   }
 }, {
   sequelize,
-  modelName: 'Address'
+  modelName: 'Address',
+  tableName: 'address',
 })
 
 Address.sync()
