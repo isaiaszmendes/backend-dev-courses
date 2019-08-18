@@ -5,4 +5,3 @@ dist
 
 yarn.lock
 yarn-error.log
-src/config/auth.ts
